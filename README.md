@@ -4,7 +4,7 @@
 
 
 
-![Snipaste_2023-04-21_22-32-24](\\img\Snipaste_2023-04-21_22-32-24.png)
+![image](https://github.com/LeoMingGit/websocket-big-screen/blob/main/img/Snipaste_2023-04-21_22-32-24.png)
 
 
 
