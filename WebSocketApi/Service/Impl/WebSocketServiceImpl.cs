@@ -10,8 +10,33 @@ namespace WebSocketApi.Service.Impl
     /// </summary>
     public class WebSocketServiceImpl : IWebSocketService
     {
+        #region 单例
+        private static object _objLock = new object();
+        private static WebSocketServiceImpl _instance = null;
+
+        public static WebSocketServiceImpl Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    lock (_objLock)
+                    {
+                        if (_instance == null)
+                        {
+                            _instance = new WebSocketServiceImpl();
+                        }
+                    }
+                }
+                return _instance;
+            }
+        }
+
+        #endregion
+
         ConcurrentDictionary<Guid, IWebSocketConnection> allSockets = new ConcurrentDictionary<Guid, IWebSocketConnection>();
         WebSocketServer sokcetServer = null;
+        static object _lock = new object();
 
         public void Start(string ip,int port)
         {
@@ -81,9 +106,19 @@ namespace WebSocketApi.Service.Impl
             Console.WriteLine(msg);
         }
 
+        /// <summary>
+        /// 推送数据
+        /// </summary>
+        /// <param name="data"></param>
         public void PushData(string data)
         {
-
+            lock (_lock)
+            {
+                foreach (var item in allSockets)
+                {
+                    item.Value.Send(data);
+                }
+            }
         }
 
 

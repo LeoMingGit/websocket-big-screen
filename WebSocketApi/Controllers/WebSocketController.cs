@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using System.Web;
 using WebSocketApi.Common;
 using WebSocketApi.Service;
+using WebSocketApi.Service.Impl;
 
 namespace WebSocketApi.Controllers
 {
@@ -17,11 +18,11 @@ namespace WebSocketApi.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="webSocketService"></param>
-        public WebSocketController(IWebSocketService webSocketService)
+        public WebSocketController()
         {
-            _webSocketService = webSocketService;
+            _webSocketService = WebSocketServiceImpl.Instance;
         }
+
 
         [HttpGet("hello")]
         public  string SayHello()

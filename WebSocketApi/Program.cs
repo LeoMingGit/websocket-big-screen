@@ -1,6 +1,7 @@
 using WebSocketApi.Service.Impl;
 using WebSocketApi.Service;
 using WebSocketApi.Common;
+using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,15 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-#region  业务service的注入
-
-
-builder.Services.AddSingleton<IWebSocketService, WebSocketServiceImpl>();  //单例注入
-var provider = builder.Services.BuildServiceProvider();
-IWebSocketService ws = provider.GetService<IWebSocketService>();
-ws.Start("0.0.0.0", 18001); // 初始化websocket
-
-#endregion
+// 初始化websocket
+var ws =WebSocketServiceImpl.Instance;
+ws.Start("0.0.0.0", 18001); 
 
 builder.Services.AddHttpContextAccessor();
 WebAppContext.Services = builder.Services;
