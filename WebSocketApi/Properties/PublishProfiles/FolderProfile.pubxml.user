@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\代码练习\websocket-big-screen\WebSocketApi\publish</_PublishTargetUrl>
+    <History>True|2023-04-21T12:38:40.0664512Z;True|2023-04-21T20:38:10.4011321+08:00;False|2023-04-21T20:38:02.1703107+08:00;True|2023-04-21T20:30:06.8284706+08:00;False|2023-04-21T20:29:47.1626842+08:00;True|2023-04-21T20:01:23.6258948+08:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
