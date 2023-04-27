@@ -19,12 +19,16 @@ import echarts from 'echarts'
 //5.x 引用方式为按需引用
 //希望使用5.x版本的话,需要在package.json中更新版本号,并切换引用方式
 //import * as echarts from 'echarts'
+
+
 Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false;
 
 // 全局注册
 Vue.component('icon', Icon);
 Vue.use(dataV);
+
+
 
 new Vue({
   router,

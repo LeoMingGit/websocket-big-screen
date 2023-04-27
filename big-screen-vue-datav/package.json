@@ -15,6 +15,7 @@
     "vue": "^2.6.11",
     "vue-awesome": "^4.0.2",
     "vue-router": "^3.1.5",
+    "vue-socket.io": "^3.0.10",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
@@ -40,7 +41,11 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "strict": "off",
+      "no-debugger": 0,
+      "no-console": "off"
+    }
   },
   "browserslist": [
     "> 1%",
