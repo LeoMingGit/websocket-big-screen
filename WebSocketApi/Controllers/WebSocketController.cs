@@ -34,6 +34,7 @@ namespace WebSocketApi.Controllers
         public async Task<string> PushData()
         {
             var data = await WebAppContext.Current.Request.GetRawBodyAsync();
+            Console.WriteLine(data.ToString());
             _webSocketService.PushData(data.ToString());
             return "OK";
         }

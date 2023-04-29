@@ -59,8 +59,8 @@ namespace WebSocketApi.Service.Impl
         {
 
             allSockets.TryAdd(socket.ConnectionInfo.Id, socket);
-            Console.WriteLine("\n[连接] " + "clientId:" + socket.ConnectionInfo.Id);
-            Console.WriteLine("\n 当前连接数：" + allSockets.Count);
+            Console.WriteLine("\n[connected] " + "clientId:" + socket.ConnectionInfo.Id);
+            Console.WriteLine("\n client count：" + allSockets.Count);
         }
 
 
@@ -72,8 +72,8 @@ namespace WebSocketApi.Service.Impl
         {
             IWebSocketConnection so = null;
             allSockets.TryRemove(socket.ConnectionInfo.Id, out so);
-            Console.WriteLine("\n[关闭] " + "clientId:" + socket.ConnectionInfo.Id);
-            Console.WriteLine("\n 当前连接数：" + allSockets.Count);
+            Console.WriteLine("\n[closed] " + "clientId:" + socket.ConnectionInfo.Id);
+            Console.WriteLine("\n client count：" + allSockets.Count);
         }
 
 
